@@ -22,6 +22,8 @@
         "drupal/admin_toolbar": "^1.23",
         "drupal/console": "^1.0.2",
         "drupal/core": "~8.5.3",
+        "drupal/page_manager": "^4.0@beta",
+        "drupal/panels": "^4.3",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
