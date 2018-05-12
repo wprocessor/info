@@ -1,0 +1,7 @@
+{
+  "registry": "https://registry.bower.io",
+  "directory" : "libraries",
+  "ignoredDependencies": [
+    "jquery"
+  ]
+}

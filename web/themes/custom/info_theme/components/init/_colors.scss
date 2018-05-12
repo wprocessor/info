@@ -1,0 +1,35 @@
+// sass-lint:disable indentation, no-color-keywords
+
+// Colors
+//
+// Use the `color()` function to add colors to CSS properties. To learn more,
+// [read the Chroma documentation](http://johnalbin.github.io/chroma/).
+//
+// Markup: chroma.twig
+//
+// Weight: -1
+//
+// Style guide: sass.colors
+
+// Define the default color scheme's color names.
+$chroma: define-default-color-scheme('branding', 'The site main colors. Can be used to define colors in other color schemes.');
+
+$chroma: add-colors((
+  white:        #fff,
+  black:        #000,
+  blue:         #00e,
+  red:          #f00,
+));
+
+// Define color names for functional uses.
+$chroma: define-color-scheme('functional', 'Colors used by functional parts of the design.');
+$chroma: add-colors('functional', (
+  // Colors used in the main content area.
+  link:               'blue',
+  link-active:        'red',
+  mark-bg:            'red',
+  text:               'black',
+  placeholder-color: ('black' lighten 30%),
+));
+
+$chroma-active-scheme: 'functional';

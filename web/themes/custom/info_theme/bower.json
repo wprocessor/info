@@ -1,0 +1,13 @@
+{
+  "name": "info_theme",
+  "description": "The node.js requirements to build this project.",
+  "main": "",
+  "authors": [
+    "Valeriy Kozhevnikov"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+  }
+}

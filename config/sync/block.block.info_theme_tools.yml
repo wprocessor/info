@@ -1,0 +1,26 @@
+uuid: 0e876aed-f50f-4953-b0a4-fcb76b56d9e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - info_theme
+_core:
+  default_config_hash: xCOijLdB1-UgXxQ9a0D1_pd8vxNEhfMnxXZc8jYhHjs
+id: info_theme_tools
+theme: info_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

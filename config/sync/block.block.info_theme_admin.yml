@@ -1,0 +1,26 @@
+uuid: fbabb94d-856a-4e69-907a-25b33b624163
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - system
+  theme:
+    - info_theme
+_core:
+  default_config_hash: DWAB7HaAfAJerAmyT8B2K-6qxicu9n0PcKVpDr--N4c
+id: info_theme_admin
+theme: info_theme
+region: sidebar_first
+weight: 1
+provider: null
+plugin: 'system_menu_block:admin'
+settings:
+  id: 'system_menu_block:admin'
+  label: Administration
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }
