@@ -1,0 +1,72 @@
+name: Info theme
+type: theme
+description: "@todo: description"
+package: Info
+core: 8.x
+base theme: stable
+
+stylesheets-remove:
+- core/themes/stable/css/system/components/ajax-progress.module.css
+- core/themes/stable/css/system/components/align.module.css
+- core/themes/stable/css/system/components/autocomplete-loading.module.css
+- core/themes/stable/css/system/components/fieldgroup.module.css
+- core/themes/stable/css/system/components/container-inline.module.css
+- core/themes/stable/css/system/components/clearfix.module.css
+- core/themes/stable/css/system/components/details.module.css
+- core/themes/stable/css/system/components/hidden.module.css
+- core/themes/stable/css/system/components/item-list.module.css
+- core/themes/stable/css/system/components/js.module.css
+- core/themes/stable/css/system/components/nowrap.module.css
+- core/themes/stable/css/system/components/position-container.module.css
+- core/themes/stable/css/system/components/progress.module.css
+- core/themes/stable/css/system/components/reset-appearance.module.css
+- core/themes/stable/css/system/components/resize.module.css
+- core/themes/stable/css/system/components/sticky-header.module.css
+- core/themes/stable/css/system/components/system-status-counter.css
+- core/themes/stable/css/system/components/system-status-report-counters.css
+- core/themes/stable/css/system/components/system-status-report-general-info.css
+- core/themes/stable/css/system/components/tabledrag.module.css
+- core/themes/stable/css/system/components/tablesort.module.css
+- core/themes/stable/css/system/components/tree-child.module.css
+- core/assets/vendor/jquery.ui/themes/base/core.css
+- core/assets/vendor/jquery.ui/themes/base/button.css
+- core/assets/vendor/jquery.ui/themes/base/resizable.css
+- core/assets/vendor/jquery.ui/themes/base/dialog.css
+- core/assets/vendor/jquery.ui/themes/base/theme.css
+
+
+# This section controls the libraries for your theme. For full documentation,
+# see https://www.drupal.org/node/2216195
+
+# The "libraries-override:" section will allow you to:
+# - Replace an entire library.
+# - Remove an entire library.
+# - Replace an asset in a library with another asset.
+# - Remove an asset from a library.
+libraries-override:
+  core/normalize: false
+  system/base:
+    css:
+      component:
+        css/components/clearfix.module.css: false
+#  classy/base:
+#    css:
+#      component:
+#        css/components/breadcrumb.css: false
+#        css/components/button.css: false
+#        css/components/more-link.css: false
+#        css/components/pager.css: false
+#        css/components/tabs.css: false
+#  core/jquery.ui:
+#    css:
+#      theme:
+#        assets/vendor/jquery.ui/themes/base/core.css: false
+#        assets/vendor/jquery.ui/themes/base/theme.css: false
+
+# The "libraries-extend:" section will allow you to add your own JS or CSS to
+# existing libraries.
+# libraries-extend:
+
+# The "libraries:" section will add a library to _all_ pages.
+libraries:
+- info_theme/base

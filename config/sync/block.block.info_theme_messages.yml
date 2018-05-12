@@ -1,0 +1,22 @@
+uuid: ee26fd77-c80a-433c-ab1b-3ee996f415e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - info_theme
+_core:
+  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
+id: info_theme_messages
+theme: info_theme
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

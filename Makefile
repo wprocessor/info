@@ -16,6 +16,11 @@ down:
 	@echo "Removing networks for $(COMPOSE_PROJECT_NAME)"
 	docker-compose down -v --remove-orphans
 
+front:
+	@echo "Building front tasks..."
+	docker run --rm -it -v $(shell pwd)/web/themes/custom/$(THEME_NAME):/work skilldlabs/frontend:zen; \
+	make -s chown
+
 db-dump-up:
 	docker-compose exec php mysql -s -u${MYSQL_ROOT_USER} -p${MYSQL_ROOT_PASSWORD} --host=mysql ${MYSQL_DATABASE} < ./db/marbin-wh.sql
 
@@ -40,8 +45,14 @@ info:
 	$(eval CONTAINERS := $(shell docker ps -f name=$(COMPOSE_PROJECT_NAME) --format "{{ .ID }}"))
 	$(foreach CONTAINER, $(CONTAINERS),$(info $(shell docker inspect --format='{{.NetworkSettings.Networks.$(COMPOSE_PROJECT_NAME)_front.IPAddress}}{{range $$p, $$conf := .NetworkSettings.Ports}} {{$$p}} {{end}}: {{.Name}}' $(CONTAINER)) ))
 
+chown:
+	docker-compose exec -T php /bin/sh -c "chown $(shell id -u):$(shell id -g) /var/www/html -R"
+
 exec0:
 	docker-compose exec php ash
 
 exec0-nginx:
 	docker-compose exec nginx ash
+
+exec0-mysql:
+	docker-compose exec mysql ash

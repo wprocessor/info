@@ -1,0 +1,38 @@
+# These lines define the info/base library.
+base:
+  css:
+    # The SMACSS category, "base", is loaded before other categories. Drupal 8
+    # loads stylesheets based on the SMACSS ordering of:
+    # base, layout, component, state, theme
+    base:
+      # The {} brackets allow you to specify the additional options, weight and
+      # media. For example, you can specify this is a print media stylesheet by
+      # specifying: { media: print } Note: this isn't recommended since
+      # separate print stylesheets is bad for front-end performance.
+      components/asset-builds/css/base.css: {}
+  # If this library had JavaScript you could specify it like this:
+  # js:
+  js:
+    js/script.js: {}
+    https://cdn.polyfill.io/v2/polyfill.min.js: { browsers: { IE: 'IE 8', '!IE': false }, type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/drupal.dialog
+    - core/drupal.dialog.ajax
+    - core/drupal.progress
+    - core/drupal.debounce
+    - core/jquery.once
+    - info_theme/clearfix
+    - info_theme/visually-hidden
+
+clearfix:
+  css:
+    component:
+      components/asset-builds/css/clearfix.css: {}
+
+visually-hidden:
+  css:
+    component:
+      components/asset-builds/css/visually-hidden.css: {}
+
