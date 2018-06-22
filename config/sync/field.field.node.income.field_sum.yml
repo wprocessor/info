@@ -1,0 +1,23 @@
+uuid: ecc10cec-ad93-4fb5-8a7e-91e427772c1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sum
+    - node.type.income
+id: node.income.field_sum
+field_name: field_sum
+entity_type: node
+bundle: income
+label: Sum
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 1
+  max: !!float 1000000000
+  prefix: ''
+  suffix: ''
+field_type: float

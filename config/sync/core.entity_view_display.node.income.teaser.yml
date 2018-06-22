@@ -1,0 +1,18 @@
+uuid: 0a18388f-27cd-4601-9a96-26f5fc6d7acf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.income
+  module:
+    - user
+id: node.income.teaser
+targetEntityType: node
+bundle: income
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }

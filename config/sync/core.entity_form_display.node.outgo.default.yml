@@ -1,0 +1,40 @@
+uuid: a84850fd-d4a2-44c3-8d13-0be7abdbbbb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.outgo.field_currency
+    - field.field.node.outgo.field_sum
+    - node.type.outgo
+id: node.outgo.default
+targetEntityType: node
+bundle: outgo
+mode: default
+content:
+  field_currency:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sum:
+    weight: 1
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

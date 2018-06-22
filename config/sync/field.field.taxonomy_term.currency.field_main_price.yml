@@ -1,0 +1,23 @@
+uuid: 9ab97593-73fd-475d-8149-aee9e08cc1a7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_main_price
+    - taxonomy.vocabulary.currency
+id: taxonomy_term.currency.field_main_price
+field_name: field_main_price
+entity_type: taxonomy_term
+bundle: currency
+label: 'Main price'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

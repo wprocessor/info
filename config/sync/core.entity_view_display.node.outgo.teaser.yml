@@ -1,0 +1,18 @@
+uuid: ea2e8c57-ceea-44c0-8f98-ce2cb92b0117
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.outgo
+  module:
+    - user
+id: node.outgo.teaser
+targetEntityType: node
+bundle: outgo
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }

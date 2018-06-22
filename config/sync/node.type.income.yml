@@ -1,0 +1,11 @@
+uuid: 5c1179d6-2c14-48fc-801b-71e72c95ceee
+langcode: en
+status: true
+dependencies: {  }
+name: Income
+type: income
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
