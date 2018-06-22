@@ -1,0 +1,11 @@
+uuid: 8d7aa3fd-d8e4-4421-9288-b99e0819057b
+langcode: en
+status: true
+dependencies: {  }
+name: Outgo
+type: outgo
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

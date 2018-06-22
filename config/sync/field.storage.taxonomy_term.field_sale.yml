@@ -1,0 +1,18 @@
+uuid: dc346688-5a1f-4573-ad4d-98cf3a2038a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_sale
+field_name: field_sale
+entity_type: taxonomy_term
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

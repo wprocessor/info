@@ -3,22 +3,73 @@ $(shell cp -n \.env.default \.env)
 $(shell cp -n \.\/docker\/docker-compose\.override\.yml\.default \.\/docker\/docker-compose\.override\.yml)
 include .env
 
+# Get local values only once.
+LOCAL_UID := $(shell id -u)
+LOCAL_GID := $(shell id -g)
+
+# Evaluate recursively.
+CUID ?= $(LOCAL_UID)
+CGID ?= $(LOCAL_GID)
+
 COMPOSE_NET_NAME := $(shell echo $(COMPOSE_PROJECT_NAME) | tr '[:upper:]' '[:lower:]'| sed -E 's/[^a-z0-9]+//g')_front
 
-all: include net
+IMAGE_FRONT ?= skilldlabs/frontend:zen
+NODE_ENV ?= testing
+front = docker run --rm --init -u $(CUID):$(CGID) -v $(shell pwd)/web/themes/custom/$(THEME_NAME):/work -e NODE_ENV=$(NODE_ENV) $(IMAGE_FRONT) ${1}
+
+php = docker-compose exec -T --user $(CUID):$(CGID) php time ${1}
+php-0 = docker-compose exec -T php time ${1}
+
+all: | include net up info
 
 up:down
-	@echo "Updating composition for $(COMPOSE_PROJECT_NAME)"
+	@echo "Updating images..."
+	docker-compose pull --parallel
+	@echo "Build and run containers for project $(COMPOSE_PROJECT_NAME)"
 	docker-compose up -d --remove-orphans
-	@make -s iprange
+	$(call php, composer global require -o --update-no-dev --no-suggest "hirak/prestissimo:^0.3")
+ifeq ($(PROJECT_INSTALL), sql-manual)
+	sleep 30
+endif
+	make -s reinstall
 
-down:
+reinstall:
+	$(call php, composer install --prefer-dist -o --no-dev --no-suggest)
+	$(call php, composer drupal-scaffold)
+	make -s front
+	make -s si
+
+si:
+	$(call php, chmod +w web/sites/default)
+ifneq ("$(wildcard web/sites/default/settings.php)","")
+	$(call php-0, rm -f web/sites/default/settings.php)
+endif
+ifeq ($(PROJECT_INSTALL), sql-manual)
+	sleep 30
+endif
+	@echo "Installing from: $(PROJECT_INSTALL)"
+ifeq ($(PROJECT_INSTALL), config)
+	$(call php, drush si config_installer --db-url=mysql://$(MYSQL_USER):$(MYSQL_PASSWORD)@mysql/$(MYSQL_DATABASE) --account-pass=admin -y config_installer_sync_configure_form.sync_directory=../config/sync)
+#	$(call php, drush en $(MODULES) -y)
+#	$(call php, drush pmu $(MODULES) -y)
+else
+	$(call php, cp site_settings/settings.php web/sites/default/settings.php)
+	$(call php, drush cr)
+	$(call php, drush updb -y --entity-updates)
+endif
+
+down: info
 	@echo "Removing networks for $(COMPOSE_PROJECT_NAME)"
 	docker-compose down -v --remove-orphans
 
+clean: down
+
 front:
 	@echo "Building front tasks..."
-	docker run --rm -it -v $(shell pwd)/web/themes/custom/$(THEME_NAME):/work skilldlabs/frontend:zen; \
+	docker pull $(IMAGE_FRONT)
+	$(call front, bower install)
+	$(call front)
+	$(call php-0, rm -rf web/themes/$(THEME_NAME)/node_modules)
 	make -s chown
 
 db-dump-up:
@@ -46,7 +97,11 @@ info:
 	$(foreach CONTAINER, $(CONTAINERS),$(info $(shell docker inspect --format='{{.NetworkSettings.Networks.$(COMPOSE_PROJECT_NAME)_front.IPAddress}}{{range $$p, $$conf := .NetworkSettings.Ports}} {{$$p}} {{end}}: {{.Name}}' $(CONTAINER)) ))
 
 chown:
-	docker-compose exec -T php /bin/sh -c "chown $(shell id -u):$(shell id -g) /var/www/html -R"
+# Use this goal to set permissions in docker container
+	$(call php-0, /bin/sh -c "chown $(CUID):$(CGID) /var/www/html/web -R")
+# Need this to fix files folder
+	$(call php-0, /bin/sh -c "chown www-data: /var/www/html/web/sites/default/files -R")
+
 
 exec0:
 	docker-compose exec php ash
