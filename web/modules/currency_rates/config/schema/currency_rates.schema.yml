@@ -1,0 +1,17 @@
+currency_rates:
+  type: config_object
+  label: 'Currency rates settings'
+  mapping:
+    base_currency_code:
+      type: string
+      label: 'Base currency code'
+    availaible_currency_codes:
+      type: sequence
+      label: 'List of allowed currency codes'
+      sequence:
+        - type: string
+          label: 'Currency code'
+    used_taxonomy_mashine_name:
+      type: string
+      label: 'Used taxonomy machine name'
+
