@@ -1,0 +1,10 @@
+uuid: a8ee7764-6b92-4aa4-b5b6-ca7b602862f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.income_outgo
+label: Income/Outgo
+targetEntityType: taxonomy_term
+cache: true

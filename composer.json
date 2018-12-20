@@ -19,21 +19,32 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
-        "drupal/admin_toolbar": "^1.23",
+        "drupal/admin_toolbar": "1.25",
+        "drupal/auto_entitylabel": "^2.1@beta",
+        "drupal/better_normalizers": "^1.0@beta",
+        "drupal/cancel_button": "^1.1",
         "drupal/config_installer": "^1.8",
         "drupal/console": "^1.0.2",
-        "drupal/core": "~8.5.5",
+        "drupal/core": "~8.6.2",
         "drupal/default_content": "^1.0@alpha",
-        "drupal/ds": "^3.1",
+        "drupal/ds": "3.2",
+        "drupal/extra_field": "^1.0",
+        "drupal/extra_field_plus": "^1.0",
+        "drupal/manage_display": "^1.0@alpha",
         "drupal/page_manager": "^4.0@beta",
         "drupal/panels": "^4.3",
+        "drupal/panels_everywhere": "^4.0@beta",
+        "drupal/token": "^1.5",
+        "drupal/views_add_button": "^1.0@RC",
+        "drupal/webform": "^5.0@RC",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
-        "webflo/drupal-finder": "^1.0.0",
+        "webflo/drupal-finder": "^1.1.0",
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "~8.5.5"
+      "drupal/devel": "^1",
+      "drush/drush": "^9.2"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -64,13 +75,33 @@
         ]
     },
     "extra": {
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/contrib/{$name}": ["type:drupal-drush"]
+      "installer-paths": {
+        "web/core": ["type:drupal-core"],
+        "web/libraries/{$name}": ["type:drupal-library"],
+        "web/modules/contrib/{$name}": ["type:drupal-module"],
+        "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+        "web/themes/contrib/{$name}": ["type:drupal-theme"],
+        "drush/contrib/{$name}": ["type:drupal-drush"]
+      },
+      "patches": {
+        "drupal/core": {
+          "Setting required on radios marks all options required": "https://www.drupal.org/files/issues/2731991-28.patch",
+          "Number widget validation can break AJAX actions": "https://www.drupal.org/files/issues/2614250-40.patch",
+          "Programmatically created translatable content type returns SQL error on content creation": "https://www.drupal.org/files/issues/2599228-31.patch",
+          "ajax.js insert command sometimes wraps content in a div, potentially producing invalid HTML and other bugs": "https://www.drupal.org/files/issues/736066-322.patch",
+          "User's language preference is not applied!": "https://www.drupal.org/files/issues/users-language-preference-not-applied-2907546-3.patch",
+          "Translations of taxonomy vocabulary not show on admin overview": "https://www.drupal.org/files/issues/2018-05-18/translation_taxonomy_vocabulary-2973475-1.patch",
+          "Error when saving settings of an entity reference field": "https://www.drupal.org/files/issues/2018-06-13/2833650-8.5-11.patch",
+          "Migration Lookup plugin does not return multiple values when matched and uses deprecated method": "https://www.drupal.org/files/issues/2890844-27.drupal.Migration-Lookup-plugin-does-not-return-multiple-values-when-matched-and-uses-deprecated-method.patch",
+          "#states element empty check not triggered on mouse based paste": "https://www.drupal.org/files/issues/states_element_empty-2445271-8.patch"
+        },
+        "drupal/default_content": {
+          "Do not reimport existing entities": "https://www.drupal.org/files/issues/do_not_reimport-2698425-56.patch"
+        },
+        "drupal/page_manager": {
+          "Use context in variant JS to be compatible with BigPipe": "https://www.drupal.org/files/issues/2018-03-14/2921404-16.patch",
+          "Warning: Missing argument 1 for Drupal/page_manager_ui/Form/PageVariantContextsForm::getContextClass()": "https://www.drupal.org/files/issues/2018-04-14/2799885-11.patch"
         }
+      }
     }
 }

@@ -1,0 +1,14 @@
+uuid: cf15baa9-1750-47c3-94f3-15fbeef2cbef
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.extended_user
+  module:
+    - user
+id: user_remove_role_action.extended_user
+label: 'Remove the Extended user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: extended_user

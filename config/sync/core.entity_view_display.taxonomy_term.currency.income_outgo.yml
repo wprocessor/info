@@ -1,0 +1,38 @@
+uuid: ff1c22c1-608e-4e7a-9a83-6cb087a2fec7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.income_outgo
+    - field.field.taxonomy_term.currency.field_code
+    - field.field.taxonomy_term.currency.field_main_price
+    - field.field.taxonomy_term.currency.field_purchase
+    - field.field.taxonomy_term.currency.field_sale
+    - field.field.taxonomy_term.currency.field_suffix
+    - taxonomy.vocabulary.currency
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: taxonomy_term.currency.income_outgo
+targetEntityType: taxonomy_term
+bundle: currency
+mode: income_outgo
+content:
+  field_suffix:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  description: true
+  field_code: true
+  field_main_price: true
+  field_purchase: true
+  field_sale: true

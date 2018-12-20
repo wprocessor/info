@@ -1,0 +1,80 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/currency"
+        }
+    },
+    "tid": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "157a8896-6020-4665-812b-2ac537605e05"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "currency"
+        }
+    ],
+    "name": [
+        {
+            "value": "EUR",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-12-13T11:18:26+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_code": [
+        {
+            "value": "EUR"
+        }
+    ],
+    "field_main_price": [
+        {
+            "value": 75
+        }
+    ],
+    "field_purchase": [
+        {
+            "value": 76
+        }
+    ],
+    "field_sale": [
+        {
+            "value": 74
+        }
+    ],
+    "field_suffix": [
+        {
+            "value": "\u20ac"
+        }
+    ]
+}

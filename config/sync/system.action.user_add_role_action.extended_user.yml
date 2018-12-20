@@ -1,0 +1,14 @@
+uuid: 7ba268af-c2ee-46a0-b5d2-b7586790fea1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.extended_user
+  module:
+    - user
+id: user_add_role_action.extended_user
+label: 'Add the Extended user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: extended_user

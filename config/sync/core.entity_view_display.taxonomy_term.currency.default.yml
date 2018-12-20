@@ -9,6 +9,13 @@ dependencies:
     - field.field.taxonomy_term.currency.field_sale
     - field.field.taxonomy_term.currency.field_suffix
     - taxonomy.vocabulary.currency
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: taxonomy_term.currency.default
 targetEntityType: taxonomy_term
 bundle: currency

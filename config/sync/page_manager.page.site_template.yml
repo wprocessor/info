@@ -1,0 +1,14 @@
+uuid: 1c07db24-20cb-4f37-8ff1-490c6bea378c
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 5LDocAa9ZtDk-apnebL2JoQ9mn6DLuBohutIKdPG4bs
+id: site_template
+label: 'Site template'
+description: ''
+use_admin_theme: false
+path: /site_template
+access_logic: and
+access_conditions: {  }
+parameters: {  }

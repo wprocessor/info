@@ -31,6 +31,11 @@ clearfix:
     component:
       components/asset-builds/css/clearfix.css: {}
 
+income_and_outgo:
+  css:
+    component:
+      components/asset-builds/css/income_and_outgo.css: {}
+
 visually-hidden:
   css:
     component:

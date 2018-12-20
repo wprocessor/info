@@ -3,16 +3,33 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.outgo.field_category
     - field.field.node.outgo.field_currency
     - field.field.node.outgo.field_sum
     - node.type.outgo
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.outgo.default
 targetEntityType: node
 bundle: outgo
 mode: default
 content:
-  field_currency:
+  field_category:
     weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+    region: content
+  field_currency:
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select

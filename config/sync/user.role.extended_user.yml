@@ -1,0 +1,9 @@
+uuid: c1877242-03a7-42d6-ae1f-5d7a1884976b
+langcode: en
+status: true
+dependencies: {  }
+id: extended_user
+label: 'Extended user'
+weight: 2
+is_admin: null
+permissions: {  }

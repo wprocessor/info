@@ -1,0 +1,5 @@
+name: 'View mode lib'
+type: module
+description: 'Library per view mode'
+package: Info
+core: 8.x

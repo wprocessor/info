@@ -1,0 +1,12 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+function info_view_mode_lib_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode = NULL) {
+  $bundles = ['income', 'outgo'];
+  $view_mode = $view_mode ?? 'teaser';
+  if (in_array($entity->bundle(), $bundles) && $view_mode === 'teaser') {
+    $build['#attached']['library'][] = 'info_theme/income_and_outgo';
+  }
+}

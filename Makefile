@@ -50,8 +50,8 @@ endif
 	@echo "Installing from: $(PROJECT_INSTALL)"
 ifeq ($(PROJECT_INSTALL), config)
 	$(call php, drush si config_installer --db-url=mysql://$(MYSQL_USER):$(MYSQL_PASSWORD)@mysql/$(MYSQL_DATABASE) --account-pass=admin -y config_installer_sync_configure_form.sync_directory=../config/sync)
-#	$(call php, drush en $(MODULES) -y)
-#	$(call php, drush pmu $(MODULES) -y)
+	$(call php, drush en $(MODULES) -y)
+	$(call php, drush pmu $(MODULES) -y)
 else
 	$(call php, cp site_settings/settings.php web/sites/default/settings.php)
 	$(call php, drush cr)
@@ -111,3 +111,16 @@ exec0-nginx:
 
 exec0-mysql:
 	docker-compose exec mysql ash
+
+dev:
+	@echo "Dev tasks..."
+	$(call php, composer install --prefer-dist -o)
+	$(call php-0, chmod +w web/sites/default)
+	$(call php, cp web/sites/default/default.services.yml web/sites/default/services.yml)
+	$(call php, sed -i -e 's/debug: false/debug: true/g' web/sites/default/services.yml)
+	$(call php, cp web/sites/example.settings.local.php web/sites/default/settings.local.php)
+	$(call php, drush -y config-set system.performance css.preprocess 0)
+	$(call php, drush -y config-set system.performance js.preprocess 0)
+	$(call php, drush en devel devel_generate webform_devel kint -y)
+	$(call php, drush pm-uninstall dynamic_page_cache page_cache -y)
+	$(call php, drush cr)

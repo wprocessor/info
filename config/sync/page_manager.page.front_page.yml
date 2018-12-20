@@ -6,7 +6,7 @@ id: front_page
 label: 'Front page'
 description: 'Front page'
 use_admin_theme: false
-path: /front-page
+path: /<front>
 access_logic: and
 access_conditions: {  }
 parameters: {  }

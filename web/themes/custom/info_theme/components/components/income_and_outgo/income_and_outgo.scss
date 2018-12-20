@@ -1,0 +1,26 @@
+
+.node--type {
+  &-income,
+  &-outgo {
+    &.node--view-mode-teaser .layout__region--content {
+      display: flex;
+      flex-direction: row;
+
+      & > div {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-income {
+    &.node--view-mode-teaser {
+      color: green;
+    }
+  }
+
+  &-outgo {
+    &.node--view-mode-teaser {
+        color: red;
+    }
+  }
+}

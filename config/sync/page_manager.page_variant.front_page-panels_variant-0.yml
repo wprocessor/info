@@ -4,23 +4,25 @@ status: true
 dependencies:
   config:
     - page_manager.page.front_page
+    - views.view.income_and_outgo
   module:
-    - node
     - panels
+    - views
 id: front_page-panels_variant-0
 label: Panels
 variant: panels_variant
 variant_settings:
   blocks:
-    2e79c80b-9f1c-44b9-8cc4-f574d3dfdb46:
-      id: node_syndicate_block
-      label: Syndicate
-      provider: node
+    d3d030f1-6344-4949-8328-ecd5210648ef:
+      id: 'views_block:income_and_outgo-user_income_and_outgo_latest'
+      label: ''
+      provider: views
       label_display: visible
-      block_count: 10
+      views_label: ''
+      items_per_page: none
       region: content
       weight: 0
-      uuid: 2e79c80b-9f1c-44b9-8cc4-f574d3dfdb46
+      uuid: d3d030f1-6344-4949-8328-ecd5210648ef
       context_mapping: {  }
   id: panels_variant
   uuid: e95976a8-5e65-4f3f-a9e4-5bdc8460d7c6

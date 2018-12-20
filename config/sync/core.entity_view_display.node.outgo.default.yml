@@ -3,16 +3,31 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.outgo.field_category
     - field.field.node.outgo.field_currency
     - field.field.node.outgo.field_sum
     - node.type.outgo
   module:
-    - user
+    - field_layout
+    - layout_discovery
+    - manage_display
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.outgo.default
 targetEntityType: node
 bundle: outgo
 mode: default
 content:
+  field_category:
+    weight: 103
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_currency:
     weight: 102
     label: above
@@ -35,4 +50,17 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    label: hidden
+    type: title
+    weight: -50
+    region: content
+    settings:
+      tag: h2
+      linked: '1'
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

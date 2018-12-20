@@ -1,0 +1,10 @@
+name: 'Info default content'
+type: module
+description: 'Default content fixtures'
+package: Custom
+core: 8.x
+dependencies:
+  - default_content:default_content
+  - drupal:block_content
+  - better_normalizers:better_normalizers
+

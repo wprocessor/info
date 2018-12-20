@@ -6,8 +6,6 @@ dependencies:
     - field.storage.node.field_currency
     - node.type.income
     - taxonomy.vocabulary.currency
-  content:
-    - 'taxonomy_term:currency:11513185-9814-47b9-b6f4-6af97afe4c4c'
 id: node.income.field_currency
 field_name: field_currency
 entity_type: node
@@ -16,9 +14,7 @@ label: Currency
 description: ''
 required: true
 translatable: true
-default_value:
-  -
-    target_uuid: 11513185-9814-47b9-b6f4-6af97afe4c4c
+default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'
