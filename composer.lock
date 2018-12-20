@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c842fbfcbc82e54e3d233ca1dd511357",
+    "content-hash": "a8da4eea100e7f82f949e4310fdd74a0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2556,9 +2556,13 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
+                    "Setting required on radios marks all options required": "https://www.drupal.org/files/issues/2018-10-09/2731991-34.patch",
+                    "Number widget validation can break AJAX actions": "https://www.drupal.org/files/issues/2614250-42_0.patch",
+                    "Programmatically created translatable content type returns SQL error on content creation": "https://www.drupal.org/files/issues/2018-12-06/2599228-104-8.6.x.patch",
                     "Translations of taxonomy vocabulary not show on admin overview": "https://www.drupal.org/files/issues/2018-05-18/translation_taxonomy_vocabulary-2973475-1.patch",
                     "Error when saving settings of an entity reference field": "https://www.drupal.org/files/issues/2018-06-13/2833650-8.5-11.patch",
-                    "Migration Lookup plugin does not return multiple values when matched and uses deprecated method": "https://www.drupal.org/files/issues/2890844-27.drupal.Migration-Lookup-plugin-does-not-return-multiple-values-when-matched-and-uses-deprecated-method.patch"
+                    "Migration Lookup plugin does not return multiple values when matched and uses deprecated method": "https://www.drupal.org/files/issues/2890844-27.drupal.Migration-Lookup-plugin-does-not-return-multiple-values-when-matched-and-uses-deprecated-method.patch",
+                    "#states element empty check not triggered on mouse based paste": "https://www.drupal.org/files/issues/2018-08-20/states_element_empty-2445271-11.patch"
                 }
             },
             "autoload": {

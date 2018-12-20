@@ -10,7 +10,6 @@ dependencies:
   module:
     - field_layout
     - layout_discovery
-    - manage_display
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -52,15 +51,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  title:
-    label: hidden
-    type: title
-    weight: -50
-    region: content
-    settings:
-      tag: h2
-      linked: '1'
-    third_party_settings: {  }
-hidden:
-  created: true
-  uid: true
+hidden: {  }
