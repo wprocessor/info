@@ -1,0 +1,34 @@
+uuid: b957a379-e259-4f5a-b3e9-f3e57b390e9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_default_currency
+    - taxonomy.vocabulary.currency
+  content:
+    - 'taxonomy_term:currency:c99e208d-ceb0-48db-b3f9-974b2474e720'
+  module:
+    - user
+id: user.user.field_default_currency
+field_name: field_default_currency
+entity_type: user
+bundle: user
+label: 'Default currency'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: c99e208d-ceb0-48db-b3f9-974b2474e720
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      currency: currency
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

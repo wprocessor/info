@@ -51,14 +51,4 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  title:
-    type: string
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-hidden:
-  created: true
-  uid: true
+hidden: {  }

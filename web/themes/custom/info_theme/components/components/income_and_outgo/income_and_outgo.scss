@@ -2,6 +2,12 @@
 .node--type {
   &-income,
   &-outgo {
+    &.node--view-mode-teaser {
+      h2 {
+        display: none;
+      }
+    }
+
     &.node--view-mode-teaser .layout__region--content {
       display: flex;
       flex-direction: row;

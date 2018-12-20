@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/taxonomy\/term\/2?_format=hal_json"
+            "href": "http:\/\/default\/taxonomy\/term\/11?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/currency"
@@ -12,12 +12,12 @@
     },
     "tid": [
         {
-            "value": 2
+            "value": 11
         }
     ],
     "uuid": [
         {
-            "value": "157a8896-6020-4665-812b-2ac537605e05"
+            "value": "e7890acd-02ed-405c-91d0-c1b7fc1d59de"
         }
     ],
     "langcode": [
@@ -39,7 +39,7 @@
     ],
     "name": [
         {
-            "value": "EUR",
+            "value": "RUB",
             "lang": "en"
         }
     ],
@@ -55,7 +55,7 @@
     },
     "changed": [
         {
-            "value": "2018-12-13T11:18:26+00:00",
+            "value": "2018-12-20T16:58:05+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -68,27 +68,27 @@
     ],
     "field_code": [
         {
-            "value": "EUR"
+            "value": "RUB"
         }
     ],
     "field_main_price": [
         {
-            "value": 75
+            "value": 1
         }
     ],
     "field_purchase": [
         {
-            "value": 76
+            "value": 1
         }
     ],
     "field_sale": [
         {
-            "value": 74
+            "value": 1
         }
     ],
     "field_suffix": [
         {
-            "value": "\u20ac"
+            "value": "\u0440\u0443\u0431."
         }
     ]
 }

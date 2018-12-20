@@ -16,7 +16,7 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: !!float 1
+  min: !!float 0
   max: !!float 1000000000
   prefix: ''
   suffix: ''

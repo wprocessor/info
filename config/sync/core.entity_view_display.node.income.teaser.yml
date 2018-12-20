@@ -48,7 +48,4 @@ content:
       prefix_suffix: false
     third_party_settings: {  }
 hidden:
-  created: true
   links: true
-  title: true
-  uid: true
