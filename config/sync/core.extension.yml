@@ -17,7 +17,7 @@ module:
   file: 0
   filter: 0
   image: 0
-  info_view_mode_lib: 0
+  info_entity_options: 0
   layout_discovery: 0
   node: 0
   page_manager: 0

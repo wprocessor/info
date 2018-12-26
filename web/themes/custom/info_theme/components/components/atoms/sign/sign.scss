@@ -1,0 +1,26 @@
+@import 'a-sign';
+
+.income--add-new,
+.outgo--add-new {
+  @extend %a-sign;
+
+  &::before {
+    @extend %a-sign__icon;
+  }
+}
+
+.income--add-new {
+  @extend %a-sign__plus;
+
+  &::before {
+    @extend %a-sign__icon-plus;
+  }
+}
+
+.outgo--add-new {
+  @extend %a-sign__minus;
+
+  &::before {
+    @extend %a-sign__icon-minus;
+  }
+}

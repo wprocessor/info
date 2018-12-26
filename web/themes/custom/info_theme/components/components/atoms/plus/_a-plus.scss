@@ -8,6 +8,16 @@ $name: 'a-plus';
   font-size: 0;
   text-decoration: none;
 
+  &,
+  &:visited {
+    color: green;
+  }
+
+  &:active,
+  &:hover {
+    color: blue;
+  }
+
   &__icon {
     @include font-size(20px);
     content: $fa-var-plus-circle;

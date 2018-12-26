@@ -20,7 +20,7 @@ bundle: income
 mode: default
 content:
   field_category:
-    weight: 1
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -29,16 +29,24 @@ content:
     type: entity_reference_autocomplete_tags
     region: content
   field_currency:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_sum:
     type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
     weight: 0
     region: content
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:
@@ -46,5 +54,4 @@ hidden:
   promote: true
   status: true
   sticky: true
-  title: true
   uid: true

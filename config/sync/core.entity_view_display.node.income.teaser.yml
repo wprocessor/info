@@ -11,6 +11,7 @@ dependencies:
   module:
     - field_layout
     - layout_discovery
+    - user
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -47,5 +48,9 @@ content:
       scale: 2
       prefix_suffix: false
     third_party_settings: {  }
-hidden:
-  links: true
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

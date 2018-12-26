@@ -1,34 +1,32 @@
-@import 'init';
-@import 'font-awesome';
+@import 'a-history-item';
 
 .node--type {
   &-income,
   &-outgo {
     &.node--view-mode-teaser {
       h2 {
-        display: none;
+        @extend %a-history-item__header-hide;
       }
     }
 
     &.node--view-mode-teaser .layout__region--content {
-      display: flex;
-      flex-direction: row;
+      @extend %a-history-item__row-flex;
 
       & > div {
-        @include margin-right(10px);
+        @extend %a-history-item__spacing-right;
       }
     }
   }
 
   &-income {
     &.node--view-mode-teaser {
-      color: green;
+      @extend %a-history-item__color-green;
     }
   }
 
   &-outgo {
     &.node--view-mode-teaser {
-        color: red;
+        @extend %a-history-item__color-red;
     }
   }
 }

@@ -1,0 +1,54 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements HOOK_PREPROCESS_HOOK().
+ */
+function info_entity_options_preprocess_status_messages(&$vars) {
+  $tempstore = \Drupal::service('user.private_tempstore')->get('info_entity_options');
+  $statusMessageToRemove = $tempstore->get('status_message_to_remove');
+
+  if (!empty($statusMessageToRemove)
+    && !empty($vars['message_list'])
+    && !empty($vars['message_list']['status'])) {
+
+    $tempstore->set('status_message_to_remove', NULL);
+    $keys = array_keys($vars['message_list']['status']);
+
+    foreach ($keys as $key) {
+      $markup = $vars['message_list']['status'][$key];
+      $renderedMarkup = $markup->__toString();
+
+      if ($statusMessageToRemove === $renderedMarkup) {
+        unset($vars['message_list']['status'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements HOOK_ENTITY_TYPE_INSERT().
+ */
+function info_entity_options_node_insert(EntityInterface $entity) {
+  $bundles = [
+    'income',
+    'outgo',
+  ];
+
+  $bundle = $entity->bundle();
+
+  if (in_array($bundle, $bundles)) {
+    $nodeType = node_get_type_label($entity);
+
+    $args = [
+      '@type' => $nodeType,
+      '%title' => $entity->toLink($entity->label())->toString(),
+    ];
+
+    $markup = new TranslatableMarkup('@type %title has been created.', $args);
+    $tempstore = \Drupal::service('user.private_tempstore')->get('info_entity_options');
+    $tempstore->set('status_message_to_remove', $markup->render());
+  }
+}

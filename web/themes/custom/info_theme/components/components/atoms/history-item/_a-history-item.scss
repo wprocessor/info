@@ -1,0 +1,35 @@
+@import 'init';
+
+$name: 'a-history-item';
+
+.#{$name},
+%#{$name} {
+  &__header {
+    &-hide {
+      display: none;
+    }
+  }
+
+  &__color {
+    &-red {
+      color: red;
+    }
+
+    &-green {
+      color: green;
+    }
+  }
+
+  &__spacing {
+    &-right {
+      @include margin-right(10px);
+    }
+  }
+
+  &__row {
+    &-flex {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

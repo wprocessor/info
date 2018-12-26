@@ -31,20 +31,20 @@ clearfix:
     component:
       components/asset-builds/css/clearfix.css: {}
 
+history-item:
+  css:
+    component:
+      components/asset-builds/css/history-item.css: {}
+
 income_and_outgo:
   css:
     component:
       components/asset-builds/css/income_and_outgo.css: {}
 
-plus:
+sign:
   css:
     component:
-      components/asset-builds/css/plus.css: {}
-
-minus:
-  css:
-    component:
-      components/asset-builds/css/minus.css: {}
+      components/asset-builds/css/sign.css: {}
 
 visually-hidden:
   css:

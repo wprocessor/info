@@ -1,0 +1,42 @@
+@import 'init';
+@import 'font-awesome';
+
+$name: 'a-sign';
+
+.#{$name},
+%#{$name} {
+  font-size: 0;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    color: blue;
+  }
+
+  &__plus {
+    &,
+    &:visited {
+      color: green;
+    }
+  }
+
+  &__minus {
+    &,
+    &:visited {
+      color: red;
+    }
+  }
+
+  &__icon {
+    @include font-size(20px);
+    font-family: $font-awesome;
+
+    &-plus {
+      content: $fa-var-plus-circle;
+    }
+
+    &-minus {
+      content: $fa-var-minus-circle;
+    }
+  }
+}
