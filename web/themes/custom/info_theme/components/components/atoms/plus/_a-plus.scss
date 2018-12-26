@@ -1,0 +1,16 @@
+@import 'init';
+@import 'font-awesome';
+
+$name: 'a-plus';
+
+.#{$name},
+%#{$name} {
+  font-size: 0;
+  text-decoration: none;
+
+  &__icon {
+    @include font-size(20px);
+    content: $fa-var-plus-circle;
+    font-family: $font-awesome;
+  }
+}

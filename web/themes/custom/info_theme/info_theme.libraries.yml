@@ -36,6 +36,16 @@ income_and_outgo:
     component:
       components/asset-builds/css/income_and_outgo.css: {}
 
+plus:
+  css:
+    component:
+      components/asset-builds/css/plus.css: {}
+
+minus:
+  css:
+    component:
+      components/asset-builds/css/minus.css: {}
+
 visually-hidden:
   css:
     component:

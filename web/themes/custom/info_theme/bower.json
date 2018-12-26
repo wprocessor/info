@@ -9,5 +9,6 @@
   "moduleType": [],
   "homepage": "",
   "dependencies": {
+    "fontawesome": "~4.7.0"
   }
 }

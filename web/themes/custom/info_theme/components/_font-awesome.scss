@@ -1,0 +1,7 @@
+$fa-font-path: '/themes/custom/info_theme/libraries/fontawesome/fonts';
+
+// Add FontAwesome
+@import 'libraries/fontawesome/scss/variables';
+@import 'libraries/fontawesome/scss/mixins';
+
+$font-awesome:    FontAwesome;

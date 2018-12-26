@@ -70,3 +70,5 @@ libraries-override:
 # The "libraries:" section will add a library to _all_ pages.
 libraries:
 - info_theme/base
+- info_theme/plus
+- info_theme/minus

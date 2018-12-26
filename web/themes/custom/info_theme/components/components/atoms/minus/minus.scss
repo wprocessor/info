@@ -1,0 +1,9 @@
+@import 'a-minus';
+
+.outgo--add-new {
+  @extend %a-minus;
+
+  &::before {
+    @extend %a-minus__icon;
+  }
+}

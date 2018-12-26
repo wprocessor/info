@@ -1,3 +1,5 @@
+@import 'init';
+@import 'font-awesome';
 
 .node--type {
   &-income,
@@ -13,7 +15,7 @@
       flex-direction: row;
 
       & > div {
-        margin-right: 10px;
+        @include margin-right(10px);
       }
     }
   }
