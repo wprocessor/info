@@ -13,4 +13,6 @@ permissions:
   - 'create income content'
   - 'create outgo content'
   - 'delete own income content'
+  - 'delete own outgo content'
   - 'edit own income content'
+  - 'edit own outgo content'

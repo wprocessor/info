@@ -20,6 +20,7 @@ $name: 'a-sign';
     }
   }
 
+  &__delete,
   &__minus {
     &,
     &:visited {
@@ -37,6 +38,10 @@ $name: 'a-sign';
 
     &-minus {
       content: $fa-var-minus-circle;
+    }
+
+    &-delete {
+      content: $fa-var-trash;
     }
   }
 }

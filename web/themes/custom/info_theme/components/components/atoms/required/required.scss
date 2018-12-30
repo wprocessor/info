@@ -1,0 +1,5 @@
+@import 'a-required';
+
+.form-required {
+  @extend %a-required;
+}

@@ -1,0 +1,11 @@
+@import 'init';
+
+$name: 'a-required';
+
+.#{$name},
+%#{$name} {
+  &::after {
+    content: '*';
+    color: red;
+  }
+}

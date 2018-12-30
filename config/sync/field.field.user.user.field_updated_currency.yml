@@ -1,0 +1,30 @@
+uuid: 305c9fe3-41cb-4b23-ace0-d7e27e3f0f3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_updated_currency
+    - taxonomy.vocabulary.currency
+  module:
+    - user
+id: user.user.field_updated_currency
+field_name: field_updated_currency
+entity_type: user
+bundle: user
+label: 'Updated currency'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      currency: currency
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

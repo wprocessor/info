@@ -1,0 +1,5 @@
+name: 'Info extra fields'
+type: module
+description: 'Contains specific extra fields'
+package: Info
+core: 8.x

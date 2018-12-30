@@ -1,0 +1,11 @@
+@import 'o-view-income-and-outgo';
+
+.views--income-and-outgo {
+  header {
+    @extend %o-view-income-and-outgo__header;
+  }
+
+  .income--add-new {
+    @extend %o-view-income-and-outgo__link__spacing-right;
+  }
+}

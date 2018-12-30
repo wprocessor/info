@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_default_currency
+    - field.field.user.user.field_update_currency_on_save
+    - field.field.user.user.field_updated_currency
   module:
     - field_layout
     - layout_discovery
@@ -18,12 +20,12 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   field_default_currency:
-    weight: 1
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -31,8 +33,24 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
     region: content
+  field_update_currency_on_save:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_updated_currency:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   language:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }

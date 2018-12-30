@@ -1,0 +1,39 @@
+@import 'init';
+
+$name: 'a-button';
+
+.#{$name},
+%#{$name} {
+  @include padding(6px 12px);
+  @include spacing(border-radius, 4px);
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+
+  &__color {
+    &-blue {
+      background-color: blue;
+    }
+
+    &-red {
+      background-color: red;
+    }
+
+    &-green {
+      background-color: green;
+    }
+
+    &-gray {
+      background-color: gray;
+    }
+
+    &-yellow {
+      background-color: yellow;
+    }
+  }
+
+  &__hover {
+    background-color: lightgray;
+    color: white;
+  }
+}

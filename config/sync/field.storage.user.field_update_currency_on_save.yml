@@ -1,0 +1,18 @@
+uuid: 66750c4f-d7ae-4796-8b35-d85fd32012aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_update_currency_on_save
+field_name: field_update_currency_on_save
+entity_type: user
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

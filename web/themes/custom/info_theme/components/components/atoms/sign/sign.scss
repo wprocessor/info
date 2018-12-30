@@ -1,26 +1,11 @@
 @import 'a-sign';
 
-.income--add-new,
-.outgo--add-new {
+.history-item-delete a {
   @extend %a-sign;
+  @extend %a-sign__delete;
 
   &::before {
     @extend %a-sign__icon;
-  }
-}
-
-.income--add-new {
-  @extend %a-sign__plus;
-
-  &::before {
-    @extend %a-sign__icon-plus;
-  }
-}
-
-.outgo--add-new {
-  @extend %a-sign__minus;
-
-  &::before {
-    @extend %a-sign__icon-minus;
+    @extend %a-sign__icon-delete;
   }
 }

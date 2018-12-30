@@ -1,0 +1,27 @@
+@import 'init';
+
+$name: 'a-pager-button';
+
+.#{$name},
+%#{$name} {
+  list-style-type: none;
+
+  a {
+    @include padding(6px 12px);
+    display: block;
+    border: 1px solid lightgray;
+    text-decoration: none;
+    color: green;
+  }
+
+  &__current {
+    a {
+      background-color: blue;
+      color: white;
+    }
+  }
+
+  &__hover {
+    background-color: lightgray;
+  }
+}

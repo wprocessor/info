@@ -12,11 +12,17 @@ $name: 'a-history-item';
 
   &__color {
     &-red {
-      color: red;
+      &,
+      a {
+        color: red;
+      }
     }
 
     &-green {
-      color: green;
+      &,
+      a {
+        color: green;
+      }
     }
   }
 
@@ -30,6 +36,16 @@ $name: 'a-history-item';
     &-flex {
       display: flex;
       flex-direction: row;
+    }
+  }
+
+  &__splitter {
+    &::before {
+      content: '-> ';
+    }
+
+    &.empty {
+      display: none;
     }
   }
 }

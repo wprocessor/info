@@ -35,3 +35,5 @@ content:
     region: content
 hidden:
   field_default_currency: true
+  field_update_currency_on_save: true
+  field_updated_currency: true

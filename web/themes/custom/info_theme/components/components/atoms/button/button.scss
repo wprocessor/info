@@ -1,0 +1,19 @@
+@import 'a-button';
+
+.income--add-new,
+.outgo--add-new {
+  @extend %a-button;
+
+  &:active:not([class*='button']),
+  &:hover {
+    @extend %a-button__hover;
+  }
+}
+
+.income--add-new {
+  @extend %a-button__color-green;
+}
+
+.outgo--add-new {
+  @extend %a-button__color-red;
+}

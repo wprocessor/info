@@ -1,0 +1,20 @@
+uuid: 8e68d3a5-2777-45cb-8f81-35c2b69284d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - user
+id: user.field_updated_currency
+field_name: field_updated_currency
+entity_type: user
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

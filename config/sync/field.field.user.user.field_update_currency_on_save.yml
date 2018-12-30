@@ -1,0 +1,24 @@
+uuid: 21d2a99c-d2f4-4813-959f-96729091d2da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_update_currency_on_save
+  module:
+    - user
+id: user.user.field_update_currency_on_save
+field_name: field_update_currency_on_save
+entity_type: user
+bundle: user
+label: 'Update currency on save'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

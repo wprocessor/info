@@ -2,6 +2,9 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements HOOK_PREPROCESS_HOOK().
@@ -40,15 +43,90 @@ function info_entity_options_node_insert(EntityInterface $entity) {
   $bundle = $entity->bundle();
 
   if (in_array($bundle, $bundles)) {
-    $nodeType = node_get_type_label($entity);
+    __info_entity_options_add_create_message_to_user_temporary($entity);
+    __info_entity_options_update_currency($entity);
+  }
+}
 
-    $args = [
-      '@type' => $nodeType,
-      '%title' => $entity->toLink($entity->label())->toString(),
-    ];
+function __info_entity_options_update_currency(EntityInterface $entity) {
+  $userId = \Drupal::currentUser()->id();
+  $user = User::load($userId);
 
-    $markup = new TranslatableMarkup('@type %title has been created.', $args);
-    $tempstore = \Drupal::service('user.private_tempstore')->get('info_entity_options');
-    $tempstore->set('status_message_to_remove', $markup->render());
+  if ($user->field_update_currency_on_save->value) {
+    $user->field_updated_currency = $entity->field_currency;
+    $user->save();
+    //var_dump($entity->field_currency->target_id);
+  }
+}
+
+/**
+ * Helps to hide add entity message.
+ *
+ * @param EntityInterface $entity
+ *   Contains entity instance.
+ */
+function __info_entity_options_add_create_message_to_user_temporary(EntityInterface $entity) {
+  $nodeType = node_get_type_label($entity);
+
+  $args = [
+    '@type' => $nodeType,
+    '%title' => $entity->toLink($entity->label())->toString(),
+  ];
+
+  $markup = new TranslatableMarkup('@type %title has been created.', $args);
+  $tempstore = \Drupal::service('user.private_tempstore')->get('info_entity_options');
+  $tempstore->set('status_message_to_remove', $markup->render());  
+}
+
+/**
+ * Implements HOOK_FORM_FORM_ID_ALTER().
+ */
+function info_entity_options_form_node_income_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  __info_entity_options_check_revisions_info_access($form, $form_state);
+  __info_entity_options_set_default_currency($form, $form_state);
+}
+
+/**
+ * Implements HOOK_FORM_FORM_ID_ALTER().
+ */
+function info_entity_options_form_node_outgo_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  __info_entity_options_check_revisions_info_access($form, $form_state);
+}
+
+/**
+ * Hide revision information for users.
+ *
+ * @param array $form
+ *   Contains form data.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Contains form state info.
+ */
+function __info_entity_options_check_revisions_info_access(&$form, FormStateInterface $form_state) {
+  $form['revision_information']['#access'] = FALSE;
+}
+
+/**
+ * Implements HOOK_FORM_FORM_ID_ALTER().
+ */
+function info_entity_options_form_node_income_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  __info_entity_options_set_default_currency($form, $form_state);
+}
+
+/**
+ * Implements HOOK_FORM_FORM_ID_ALTER().
+ */
+function info_entity_options_form_node_outgo_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  __info_entity_options_set_default_currency($form, $form_state);
+}
+
+function __info_entity_options_set_default_currency(&$form, FormStateInterface $form_state) {
+  $userId = \Drupal::currentUser()->id();
+  $user = User::load($userId);
+
+  if (empty($user->field_updated_currency->target_id)) {
+    $form['field_currency']['widget']['#default_value'] = $user->field_default_currency->target_id;
+  }
+  else {
+    $form['field_currency']['widget']['#default_value'] = $user->field_updated_currency->target_id;
   }
 }

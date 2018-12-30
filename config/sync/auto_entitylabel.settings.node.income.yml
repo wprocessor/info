@@ -1,5 +1,5 @@
 status: '2'
-pattern: 'node-[current-date:custom:Y/m/d-Hisu]'
+pattern: '[none]'
 php: 0
 escape: 0
 dependencies:

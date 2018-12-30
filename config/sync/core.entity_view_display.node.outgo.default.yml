@@ -10,6 +10,7 @@ dependencies:
   module:
     - field_layout
     - layout_discovery
+    - user
 third_party_settings:
   field_layout:
     id: layout_onecol
@@ -19,6 +20,16 @@ targetEntityType: node
 bundle: outgo
 mode: default
 content:
+  extra_field_history_item_delete:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  extra_field_history_item_title:
+    settings: {  }
+    weight: 0
+    region: content
+    third_party_settings: {  }
   field_category:
     weight: 4
     label: hidden
@@ -51,4 +62,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  extra_field_history_item_edit: true

@@ -1,0 +1,9 @@
+@import 'a-pager';
+
+.pager[role='navigation'] {
+  .pager {
+    &__items {
+      @extend %a-pager;
+    }
+  }
+}

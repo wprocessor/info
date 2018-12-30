@@ -1,9 +1,0 @@
-@import 'a-plus';
-
-.income--add-new1 {
-  @extend %a-plus;
-
-  &::before {
-    @extend %a-plus__icon;
-  }
-}

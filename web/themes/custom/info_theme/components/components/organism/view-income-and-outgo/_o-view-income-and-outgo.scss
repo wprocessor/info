@@ -1,0 +1,18 @@
+@import 'init';
+
+$name: 'o-view-income-and-outgo';
+
+.#{$name},
+%#{$name} {
+  &__header {
+    @include margin(20px 0);
+  }
+
+  &__link {
+    &__spacing {
+      &-right {
+        @include margin-right(10px);
+      }
+    }
+  }
+}

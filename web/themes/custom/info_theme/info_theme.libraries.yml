@@ -26,25 +26,55 @@ base:
     - info_theme/clearfix
     - info_theme/visually-hidden
 
+button:
+  css:
+    component:
+      components/asset-builds/css/button.css: {}
+
 clearfix:
   css:
     component:
       components/asset-builds/css/clearfix.css: {}
+
+currency-item:
+  css:
+    component:
+      components/asset-builds/css/currency-item.css: {}
+
+dialog:
+  css:
+    component:
+      components/asset-builds/css/dialog.css: {}
 
 history-item:
   css:
     component:
       components/asset-builds/css/history-item.css: {}
 
-income_and_outgo:
+pager:
   css:
     component:
-      components/asset-builds/css/income_and_outgo.css: {}
+      components/asset-builds/css/pager.css: {}
+
+pager-button:
+  css:
+    component:
+      components/asset-builds/css/pager-button.css: {}
+
+required:
+  css:
+    component:
+      components/asset-builds/css/required.css: {}
 
 sign:
   css:
     component:
       components/asset-builds/css/sign.css: {}
+
+view-income-and-outgo:
+  css:
+    component:
+      components/asset-builds/css/view-income-and-outgo.css: {}
 
 visually-hidden:
   css:

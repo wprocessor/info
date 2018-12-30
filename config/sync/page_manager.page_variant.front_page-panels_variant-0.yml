@@ -6,6 +6,7 @@ dependencies:
     - page_manager.page.front_page
     - views.view.income_and_outgo
   module:
+    - info_custom_block
     - panels
     - views
 id: front_page-panels_variant-0
@@ -21,8 +22,17 @@ variant_settings:
       views_label: ''
       items_per_page: none
       region: content
-      weight: 0
+      weight: 2
       uuid: d3d030f1-6344-4949-8328-ecd5210648ef
+      context_mapping: {  }
+    012e9816-d08c-4519-b418-eb5f72e78041:
+      id: block_total_amount
+      label: 'Total amount 1m'
+      provider: info_custom_block
+      label_display: visible
+      region: content
+      weight: -1
+      uuid: 012e9816-d08c-4519-b418-eb5f72e78041
       context_mapping: {  }
   id: panels_variant
   uuid: e95976a8-5e65-4f3f-a9e4-5bdc8460d7c6

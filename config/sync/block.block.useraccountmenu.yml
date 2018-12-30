@@ -1,0 +1,24 @@
+uuid: 9d3e8141-15e4-4b97-bc45-838114a7d751
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - info_theme
+id: useraccountmenu
+theme: info_theme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

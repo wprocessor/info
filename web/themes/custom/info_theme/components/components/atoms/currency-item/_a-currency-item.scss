@@ -1,0 +1,17 @@
+@import 'init';
+
+$name: 'a-currency-item';
+
+.#{$name},
+%#{$name} {
+  &__header {
+    &-hide {
+      display: none;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: row;
+  }
+}

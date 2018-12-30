@@ -1,0 +1,10 @@
+@import 'a-dialog';
+
+.ui-widget-overlay.ui-front {
+  @extend %a-dialog__overlay;
+}
+
+.ui-dialog {
+  @extend %a-dialog;
+}
+

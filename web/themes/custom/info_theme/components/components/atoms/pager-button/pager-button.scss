@@ -1,0 +1,15 @@
+@import 'a-pager-button';
+
+.pager[role='navigation'] {
+  .pager__item {
+    @extend %a-pager-button;
+
+    &.is-active {
+      @extend %a-pager-button__current;
+    }
+
+    a:not(.is-active):hover {
+      @extend %a-pager-button__hover;
+    }
+  }
+}

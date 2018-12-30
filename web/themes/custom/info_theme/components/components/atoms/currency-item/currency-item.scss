@@ -1,0 +1,13 @@
+@import 'a-currency-item';
+
+.taxonomy-term {
+  &--view-mode-currency {
+    h2 {
+      @extend %a-currency-item__header-hide;
+    }
+
+    .layout__region--content {
+      @extend %a-currency-item__flex;
+    }
+  }
+}

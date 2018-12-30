@@ -15,6 +15,10 @@
       & > div {
         @extend %a-history-item__spacing-right;
       }
+
+      .history-item-title {
+        @extend %a-history-item__splitter;
+      }
     }
   }
 
