@@ -1,0 +1,24 @@
+info_currency.currency_data_controller:
+  path: 'curency/data/list'
+  defaults:
+    _controller: '\Drupal\info_currency\Controller\CurrencyDataController::listRates'
+  methods: GET
+  requirements:
+    _access: 'TRUE'
+
+info_currency.admin_config_content:
+  path: '/admin/config/info_currency'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Currency settings'
+  requirements:
+    _permission: 'access administration pages'
+
+
+info_currency.settings:
+  path: '/admin/config/info_currency/settings'
+  defaults:
+    _form: 'Drupal\info_currency\Form\ConfigurationForm'
+    _title: 'Global currency settings'
+  requirements:
+    _permission: 'administer site configuration'

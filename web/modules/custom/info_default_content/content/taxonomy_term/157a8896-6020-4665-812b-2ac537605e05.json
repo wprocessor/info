@@ -71,21 +71,6 @@
             "value": "EUR"
         }
     ],
-    "field_main_price": [
-        {
-            "value": 75
-        }
-    ],
-    "field_purchase": [
-        {
-            "value": 76
-        }
-    ],
-    "field_sale": [
-        {
-            "value": 74
-        }
-    ],
     "field_suffix": [
         {
             "value": "\u20ac"

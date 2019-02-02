@@ -6,26 +6,27 @@ module:
   breakpoint: 0
   cancel_button: 0
   config: 0
+  config_filter: 0
+  config_split: 0
   ctools: 0
   ctools_block: 0
-  dblog: 0
   extra_field: 0
   extra_field_plus: 0
   field: 0
   field_layout: 0
-  field_ui: 0
   file: 0
   filter: 0
   image: 0
+  info_currency: 0
   info_custom_block: 0
   info_entity_options: 0
   info_extra_fields: 0
   layout_discovery: 0
   node: 0
   page_manager: 0
-  page_manager_ui: 0
   panels: 0
   panels_everywhere: 0
+  path: 0
   responsive_image: 0
   serialization: 0
   system: 0
@@ -33,13 +34,13 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  ultimate_cron: 0
   update: 0
   user: 0
   views_add_button: 0
   views_field_view: 0
-  views_ui: 0
   webform: 0
-  webform_ui: 0
+  pathauto: 1
   views: 10
   minimal: 1000
 theme:

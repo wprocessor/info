@@ -3,6 +3,8 @@
 namespace Drupal\info_custom_block\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 
 /**
  * Provides a Total amount block.
@@ -18,19 +20,53 @@ class BlockTotalAmount extends BlockBase {
   /**
    * {@inherit}
    */
+  protected function blockAccess(AccountInterface $account) {
+    $access = parent::blockAccess($account);
+    $auth = $account->isAuthenticated();
+    return AccessResult::allowedIf($access && $auth);
+  }
+
+    /**
+   * {@inherit}
+   */
   public function build() {
     $terms = $this->getCurrencyItems();
     $amount = [];
 
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $userDefaultCurrencyId = $user->field_default_currency->getValue()[0]['target_id'];
+    $userDefaultCurrency = \Drupal\taxonomy\Entity\Term::load($userDefaultCurrencyId);
+
+    $userTotal = 0;
+    
     foreach ($terms as $nextTerm) {
       $income = $this->getAmountByTermAndDirection($nextTerm->id(), 'income');
       $outgo = $this->getAmountByTermAndDirection($nextTerm->id(), 'outgo');
 
+      $total = $income - $outgo;
+
+      $siteBaseTotal = $total * $nextTerm->field_rate->value;
+      
+      //var_dump($siteBaseTotal);
+      //var_dump($userDefaultCurrency->field_rate->value);
+      
+      $userTotalIteration = $siteBaseTotal / $userDefaultCurrency->field_rate->value;
+      
+      $userTotal += $userTotalIteration;
+      
+      //var_dump($userTotal);
+      
+      
       $amount[] = [
         $this->getHtmlItem($nextTerm->label()),
-        $this->getHtmlItem(($income - $outgo)),
+        $this->getHtmlItem($total),
       ];
     }
+
+    $amount[] = [
+      $this->getHtmlItem($userDefaultCurrency->label()),
+      $this->getHtmlItem(money_format('%i', $userTotal)),
+    ];
 
     return [
       '#theme' => 'item_list',

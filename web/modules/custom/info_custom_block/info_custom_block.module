@@ -1,0 +1,8 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+
+function info_custom_block_preprocess_block__system_branding_block(&$variables) {
+  $blockClass = Html::cleanCssIdentifier($variables['attributes']['id']);
+  $variables['attributes']['class'][] = $blockClass;
+}

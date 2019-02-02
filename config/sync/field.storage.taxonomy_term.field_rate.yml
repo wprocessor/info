@@ -1,11 +1,11 @@
-uuid: dc346688-5a1f-4573-ad4d-98cf3a2038a0
+uuid: 1a1b49f8-620d-4199-8aa5-487c99850deb
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_sale
-field_name: field_sale
+id: taxonomy_term.field_rate
+field_name: field_rate
 entity_type: taxonomy_term
 type: float
 settings: {  }

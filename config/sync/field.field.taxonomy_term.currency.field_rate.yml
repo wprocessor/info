@@ -1,22 +1,24 @@
-uuid: b23e092b-4ab2-4992-9848-574735ff2b85
+uuid: 14f1c51d-f44d-442a-b8c7-9295d5bdaddd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_purchase
+    - field.storage.taxonomy_term.field_rate
     - taxonomy.vocabulary.currency
-id: taxonomy_term.currency.field_purchase
-field_name: field_purchase
+id: taxonomy_term.currency.field_rate
+field_name: field_rate
 entity_type: taxonomy_term
 bundle: currency
-label: Purchase
+label: Rate
 description: ''
 required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: !!float 0
 default_value_callback: ''
 settings:
-  min: null
+  min: !!float 0
   max: null
   prefix: ''
   suffix: ''

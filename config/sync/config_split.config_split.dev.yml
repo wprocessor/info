@@ -1,0 +1,23 @@
+uuid: 19126be2-5c6a-4dfd-9c60-e7d82eda128c
+langcode: en
+status: false
+dependencies: {  }
+id: dev
+label: dev
+description: ''
+folder: ../config/splits/dev
+module:
+  dblog: 0
+  devel: 0
+  field_ui: 0
+  kint: 0
+  page_manager_ui: 0
+  queue_ui: 0
+  views_ui: 0
+  webform_ui: 0
+theme: {  }
+blacklist: {  }
+graylist: {  }
+graylist_dependents: false
+graylist_skip_equal: true
+weight: 0

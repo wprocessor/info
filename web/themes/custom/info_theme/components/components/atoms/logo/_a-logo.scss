@@ -1,0 +1,9 @@
+@import 'init';
+
+$name: 'a-logo';
+
+.#{$name},
+%#{$name} {
+  @include spacing(width, 20px);
+  @include spacing(height, 20px);
+}

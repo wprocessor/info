@@ -1,0 +1,4 @@
+services:
+  info_currency.currency.data:
+    class: 'Drupal\info_currency\Service\CurrencyData'
+    arguments: ['@http_client']

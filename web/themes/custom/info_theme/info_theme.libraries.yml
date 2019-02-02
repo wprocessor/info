@@ -26,6 +26,11 @@ base:
     - info_theme/clearfix
     - info_theme/visually-hidden
 
+autocomplete:
+  css:
+    component:
+      components/asset-builds/css/autocomplete.css: {}
+
 button:
   css:
     component:
@@ -50,6 +55,16 @@ history-item:
   css:
     component:
       components/asset-builds/css/history-item.css: {}
+
+link:
+  css:
+    component:
+      components/asset-builds/css/link.css: {}
+
+logo:
+  css:
+    component:
+      components/asset-builds/css/logo.css: {}
 
 pager:
   css:

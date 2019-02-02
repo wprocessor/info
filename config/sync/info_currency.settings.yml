@@ -1,0 +1,4 @@
+base_currency: USD
+currency_update_interval: '3600'
+_core:
+  default_config_hash: DQOD2JCueD29DJENvxIhy79ryU9KIDb6sGgyKNAii34

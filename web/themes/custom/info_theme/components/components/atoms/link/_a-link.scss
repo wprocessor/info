@@ -1,0 +1,9 @@
+@import 'init';
+
+$name: 'a-link';
+
+.#{$name},
+%#{$name} {
+  text-decoration: none;
+  color: black;
+}

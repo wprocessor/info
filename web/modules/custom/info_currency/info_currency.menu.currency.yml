@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: { }
+id: currency
+label: 'Currency'
+description: 'Contains all settings related to currency managment'
+looked: true
+parent: system.admin_config

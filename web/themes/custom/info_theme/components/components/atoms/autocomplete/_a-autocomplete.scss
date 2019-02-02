@@ -1,0 +1,10 @@
+@import 'init';
+
+$name: 'a-autocomplete';
+
+.#{$name},
+%#{$name} {
+  background-color: white;
+  border: 1px solid black;
+  border-top: 0;
+}

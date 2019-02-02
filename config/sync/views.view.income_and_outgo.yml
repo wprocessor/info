@@ -6,6 +6,8 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - node.type.income
     - node.type.outgo
+    - user.role.authenticated
+    - user.role.extended_user
   module:
     - node
     - user
@@ -26,9 +28,11 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            authenticated: authenticated
+            extended_user: extended_user
       cache:
         type: tag
         options: {  }
@@ -299,7 +303,7 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }
   user_income_and_outgo_latest:
     display_plugin: block
@@ -317,5 +321,5 @@ display:
         - url.query_args
         - user
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags: {  }

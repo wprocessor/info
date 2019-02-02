@@ -1,0 +1,12 @@
+info_currency.admin_config_content:
+  title: Currency
+  description: 'Currency settings'
+  parent: system.admin_config
+  route_name: info_currency.admin_config_content
+  weight: -22
+
+info_currency.settings:
+  title: Currency settings
+  description: 'Currency settings'
+  parent: info_currency.admin_config_content
+  route_name: info_currency.settings

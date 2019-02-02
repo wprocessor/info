@@ -5,9 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.currency
     - field.field.taxonomy_term.currency.field_code
-    - field.field.taxonomy_term.currency.field_main_price
-    - field.field.taxonomy_term.currency.field_purchase
-    - field.field.taxonomy_term.currency.field_sale
+    - field.field.taxonomy_term.currency.field_rate
     - field.field.taxonomy_term.currency.field_suffix
     - taxonomy.vocabulary.currency
   module:
@@ -22,17 +20,6 @@ targetEntityType: taxonomy_term
 bundle: currency
 mode: currency
 content:
-  field_main_price:
-    weight: 1
-    label: hidden
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
-    region: content
   field_suffix:
     weight: 0
     label: hidden
@@ -44,5 +31,4 @@ content:
 hidden:
   description: true
   field_code: true
-  field_purchase: true
-  field_sale: true
+  field_rate: true

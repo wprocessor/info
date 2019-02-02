@@ -5,9 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.income_outgo
     - field.field.taxonomy_term.currency.field_code
-    - field.field.taxonomy_term.currency.field_main_price
-    - field.field.taxonomy_term.currency.field_purchase
-    - field.field.taxonomy_term.currency.field_sale
+    - field.field.taxonomy_term.currency.field_rate
     - field.field.taxonomy_term.currency.field_suffix
     - taxonomy.vocabulary.currency
   module:
@@ -33,6 +31,4 @@ content:
 hidden:
   description: true
   field_code: true
-  field_main_price: true
-  field_purchase: true
-  field_sale: true
+  field_rate: true

@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implements hook_cron().
+ */
+function info_currency_cron() {
+  $interval = 3600;
+  $baseCurrency = 'USD';
+
+  $nextExecution = \Drupal::state()->get('info_currency.next_execution', 0);
+
+  //if (\REQUEST_TIME >= $nextExecution) {
+  if (TRUE) {
+
+    $currencyList = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties([
+        'vid' => 'currency',
+      ]);
+
+    $currencyData = new \stdClass();
+    $currencyData->base = $baseCurrency;
+
+    $queueFactory = \Drupal::service('queue');
+    $queue = $queueFactory->get('info_currency_rates_load');
+
+    foreach ($currencyList as $nextTerm) {
+      $currencyData->asked = $nextTerm->field_code->value;
+      $queue->createItem($currencyData);
+    }
+
+    \Drupal::state()->set('info_currency.next_execution', \REQUEST_TIME + $interval);
+  }
+}

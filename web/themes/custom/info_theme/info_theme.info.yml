@@ -70,10 +70,13 @@ libraries-override:
 # The "libraries:" section will add a library to _all_ pages.
 libraries:
 - info_theme/base
+- info_theme/autocomplete
 - info_theme/button
 - info_theme/currency-item
 - info_theme/dialog
 - info_theme/history-item
+- info_theme/link
+- info_theme/logo
 - info_theme/pager
 - info_theme/pager-button
 - info_theme/required

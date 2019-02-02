@@ -4,9 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.currency.field_code
-    - field.field.taxonomy_term.currency.field_main_price
-    - field.field.taxonomy_term.currency.field_purchase
-    - field.field.taxonomy_term.currency.field_sale
+    - field.field.taxonomy_term.currency.field_rate
     - field.field.taxonomy_term.currency.field_suffix
     - taxonomy.vocabulary.currency
   module:
@@ -29,22 +27,8 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_main_price:
-    weight: 1
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
-  field_purchase:
-    weight: 2
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
-    region: content
-  field_sale:
-    weight: 3
+  field_rate:
+    weight: 6
     settings:
       placeholder: ''
     third_party_settings: {  }
